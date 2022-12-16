@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fultter_docs_clone/colors.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fultter_docs_clone/repository/auth_repository.dart';
 
-class LoginScreen extends StatelessWidget {
+
+class LoginScreen extends ConsumerWidget {
   const LoginScreen({Key? key}) : super(key: key);
+  void signInWithgoogle(WidgetRef ref) {
+    ref.read(authRepositoryProvider).signInWithGoogle();
+  }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+
     return Scaffold(
         body: Center(
       child: ElevatedButton.icon(
-          onPressed: () {},
+          onPressed: () => signInWithgoogle(ref),
           icon: Image.asset('assets/images/g-logo-2.png', height: 20,),
           label: const Text(
             'sign in with google',

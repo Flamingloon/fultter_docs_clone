@@ -1,5 +1,5 @@
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final authRepositoryProvider = Provider(
   (ref) => AuthRepository(
